@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Willeven Sports</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styleCompras.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="icon" type="image/x-icon" href="/imgs/logoIcon.jpg">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="/imgs/logo.png" alt="Logo da Loja">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="O que você está buscando?">
+                <a href="/html/pesquisar.html" class="search-link">
+                    <img src="/imgs/lupa.jpg" alt="Pesquisar" class="search-icon">
+                </a>
+                <a href="/html/carrinho.html" class="cart-link">
+                    <img src="/imgs/carrinho.jpg" alt="Carrinho" class="cart-icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <nav>
+                 <ul>
+                    <li><a href="/index.html">PRONTA ENTREGA</a></li>
+                    <li><a href="/html/brasileirao.html">BRASILEIRÃO</a></li>
+                    <li><a href="/html/internacional.html">INTERNACIONAIS</a></li>
+                    <li><a href="/html/selecoes.html">SELEÇÕES</a></li>
+                    <li><a href="/html/retro.html">RETRÔ</a></li>
+                    <li><a href="/html/infantil.html">INFANTIL</a></li>
+                    <li><a href="/html/femino.html">FEMININO</a></li>
+                    <li><a href="/html/nba.html">NBA</a></li>
+                </ul>
+             </nav>
+     </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="product-gallery">
+                <img src="/imgs/corinthianfeminino.webp" alt="Camisa Grêmio 94/95" class="main-image" id="main-image">
+                <div class="thumbnail-gallery">
+                    <img src="/imgs/corinthianfemnocosta.webp" alt="Camisa Grêmio 94/95" class="thumbnail" onclick="changeImage(this)">
+                    <img src="/imgs/corinthianfeminino.webp" alt="Camisa Grêmio Costas" class="thumbnail" onclick="changeImage(this)">
+                </div>
+            </div>
+            
+            <div class="product-details">
+                <p class="breadcrumb">Início / PRONTA ENTREGA / CAMISAS DE FUTEBOL / Feminino / Camisa Corinthians Titular Feminina 24/25</p>
+                <h1>Camisa Corinthians Titular Feminina 24/25</h1>
+                <p class="price">R$179,99</p>
+                <p class="installments">4 x de R$45,00 sem juros</p>
+                <div class="size-options">
+                    <label for="size">Tamanho:</label>
+                    <select id="size">
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                        <option value="GG">GG</option>
+                    </select>
+                </div>
+                <p class="stock-alert">Atenção, última peça!</p>
+                
+                <div class="purchase-options">
+                    <button class="quantity-button" onclick="decreaseQuantity()">-</button>
+                    <span id="quantity">1</span>
+                    <button class="quantity-button" onclick="increaseQuantity()">+</button>
+                    <button onclick="addProductToCart('Camisa Corinthians Titular Feminina 24/25', 179.99)">Comprar</button>
+                </div>
+                
+                <div class="details">
+                    <p><strong>Meios de pagamento</strong></p>
+                    <!-- Adicione aqui os métodos de pagamento -->
+                    <p><strong>Meios de envio</strong></p>
+                    <div class="shipping">
+                        <label for="cep">Digite seu CEP:</label>
+                        <input type="text" id="cep" placeholder="CEP para frete" maxlength="10" oninput="formatCEP(this)">
+                        <button class="validate-cep" onclick="validateCEP()">Validar</button>
+                        <p id="cep-message"></p>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+        <!-- Descrição do produto (movida para aqui) -->
+        <div class="description">
+            <h2>Descrição</h2>
+            <p>A W11 Sports é uma loja especializada em camisas de futebol e materiais esportivos criada em 2017, com a missão de oferecer produtos de extrema qualidade com preços justos para todos os nossos amigos clientes. Buscamos diariamente aprimorar nossos serviços para proporcionar a melhor experiência, atendendo as necessidades de todos aqueles que assim como nós amam os esportes, trazendo alegria através dos mantos!</p>
+            <p>Produto disponível a PRONTA ENTREGA, ENVIO IMEDIATO, sai direto do nosso estoque em Porto Alegre. Prazo de entrega de 3 a 7 dias úteis após envio, dependendo do endereço de entrega! Temos o preço único de R$5,90 no frete na modalidade PAC para toda a região SUL!</p>
+            <p><strong>Camisa Corinthians Titular Feminina 24/25</strong><br>
+            Temporada: 24/25<br>
+            Tipo: Titular<br>
+            Versão: Torcedor<br>
+            Tecnologia: Aeroready<br>
+            Patrocinador: RENNER e Coca-Cola<br>
+            Nome: SEM<br>
+            Número: SEM<br>
+            Qualidade: Réplica Tailandesa 1:1 de alta qualidade!<br>
+            Tecido: Poliéster<br>
+            Produto novo com todas as etiquetas de autenticidade.</p>
+
+            <h2>Tamanhos disponíveis</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tamanho</th>
+                        <th>Largura (cm)</th>
+                        <th>Comprimento (cm)</th>
+                        <th>Altura (cm)</th>
+                        <th>Peso (kg)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>P</td>
+                        <td>50-53</td>
+                        <td>68-71</td>
+                        <td>162-170</td>
+                        <td>50-62</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>53-55</td>
+                        <td>71-74</td>
+                        <td>170-176</td>
+                        <td>62-78</td>
+                    </tr>
+                    <tr>
+                        <td>G/L</td>
+                        <td>55-58</td>
+                        <td>73-76</td>
+                        <td>176-182</td>
+                        <td>78-83</td>
+                    </tr>
+                    <tr>
+                        <td>GG/XL</td>
+                        <td>58-60</td>
+                        <td>75-78</td>
+                        <td>182-190</td>
+                        <td>83-90</td>
+                    </tr>
+                    <tr>
+                        <td>GGG/2XL</td>
+                        <td>59-62</td>
+                        <td>77-80</td>
+                        <td>190-195</td>
+                        <td>90-97</td>
+                    </tr>
+                    <tr>
+                        <td>3XL</td>
+                        <td>62-64</td>
+                        <td>81-83</td>
+                        <td>192-197</td>
+                        <td>97-104</td>
+                    </tr>
+                    <tr>
+                        <td>4XL</td>
+                        <td>64-65</td>
+                        <td>83-85</td>
+                        <td>192-200</td>
+                        <td>104-110</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>*As medidas podem variar 2 a 3 cm para mais ou para menos.</p>
+
+            <h2>Informações adicionais</h2>
+            <p><strong>Não fazemos trocas de produtos personalizados!</strong> Confira bem o seu tamanho antes de fechar a compra.</p>
+            <p><strong>Atendimento ao Cliente:</strong><br>
+            - Após envio do pedido, lhe mandaremos o código de rastreio para que você possa acompanhar a entrega do seu pedido, iremos lhe informando sempre a cada atualização de entrega;<br>
+            - Todos os produtos têm garantia contra defeitos de fabricação;<br>
+            - Suporte humanizado sempre disponível em todas as etapas, seja antes ou depois da compra;<br>
+            - Processo de pagamento totalmente seguro, todos os dados são criptografados, garantindo segurança total às transações;<br>
+            - Todas as páginas estão em ambiente seguro, como pode verificar o "cadeado verde" na URL.<br>
+            - Para qualquer dúvida ou necessidade de maiores informações, estamos sempre dispostos a atender via WhatsApp: (51) 98160-7499.</p>
+        </div>
+
+        <!-- Janela pop-up para produto adicionado ao carrinho -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <p>Produto adicionado ao carrinho com sucesso!</p>
+        </div>
+    </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/imgs/logo.png" alt="Logo da Loja" class="footer-logo-img">
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/html/sobre.html">Sobre Nós</a></li>
+                    <li><a href="https://www.instagram.com/willevensports2/" target="_blank">Contato</a></li>
+                    <li><a href="/docs/Politica de privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+                    <li><a href="/docs/Termos de Serviço do Site Willeven.pdf" target="_blank">Termos de Serviço</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Siga-nos</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><img src="/imgs/facebook.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/willevensports2/" target="_blank" class="social-icon"><img src="/imgs/instagram.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="/imgs/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Loja de Camisas de Futebol. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        function addProductToCart(productId) {
+      console.log("Produto adicionado ao carrinho:", productId);
+    }
+
+        function changeImage(imgElement) {
+            // Troca a imagem principal pela imagem clicada
+            document.getElementById('main-image').src = imgElement.src;
+        }
+
+
+        function formatCEP(input) {
+    input.value = input.value.replace(/\D/g, '').replace(/(\d{5})(\d{3})/, '$1-$2');
+}
+
+function validateCEP() {
+    const cep = document.getElementById('cep').value.replace(/\D/g, '');
+    const message = document.getElementById('cep-message');
+    
+    if (cep.length === 8) {
+        message.style.visibility = 'visible';
+        message.style.color = 'green';  // Cor para sucesso
+        message.textContent = 'Frete Grátis!';
+    } else {
+        message.style.visibility = 'visible';
+        message.style.color = '#d9534f';  // Cor para erro
+        message.textContent = 'CEP inválido. Verifique o número!';
+    }
+}
+
+    </script>
+<script>
+    function addProductToCart(productName, productPrice) {
+        // Exibir uma notificação
+        alert(`${productName} foi adicionado ao carrinho!`);
+
+        // Recuperar o carrinho do localStorage (ou iniciar um novo)
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Adicionar o novo produto ao carrinho
+        cart.push({ name: productName, price: productPrice });
+
+        // Salvar o carrinho atualizado no localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function addProductToCart(productName, productPrice) {
+    // Exibir o pop-up temporário
+    showPopup();
+
+    // Recuperar o carrinho do localStorage (ou iniciar um novo)
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Adicionar o novo produto ao carrinho
+    cart.push({ name: productName, price: productPrice });
+
+    // Salvar o carrinho atualizado no localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// Função para exibir o pop-up
+function showPopup() {
+    const popup = document.getElementById("popup");
+    popup.style.display = "flex"; // Mostra o pop-up com display flex
+
+    // Fechar automaticamente o pop-up após 2 segundos
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 2000);
+}
+
+// Função para fechar o pop-up manualmente
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+
+// Função para aumentar a quantidade
+function increaseQuantity() {
+    const quantityElement = document.getElementById("quantity");
+    let quantity = parseInt(quantityElement.textContent, 10);
+    quantity += 1;
+    quantityElement.textContent = quantity;
+}
+
+// Função para diminuir a quantidade
+function decreaseQuantity() {
+    const quantityElement = document.getElementById("quantity");
+    let quantity = parseInt(quantityElement.textContent, 10);
+    if (quantity > 1) { 
+        quantity -= 1;
+        quantityElement.textContent = quantity;
+    }
+}
+
+// Função para adicionar ao carrinho, agora com a quantidade
+function addProductToCart(productName, productPrice) {
+    const quantity = parseInt(document.getElementById("quantity").textContent, 10);
+    const totalPrice = productPrice * quantity; 
+    showPopup();
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name: productName, price: productPrice, quantity: quantity, totalPrice: totalPrice });
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+</script>
+
+<script href="/js/cart.js"></script>
+</body>
+</html>

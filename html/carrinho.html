@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Willeven Sports</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styleCarrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="icon" type="image/x-icon" href="/imgs/logoIcon.jpg">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="/imgs/logo.png" alt="Logo da Loja">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="O que você está buscando?">
+                <a href="/html/pesquisar.html" class="search-link">
+                    <img src="/imgs/lupa.jpg" alt="Pesquisar" class="search-icon">
+                </a>
+                <a href="/html/carrinho.html" class="cart-link">
+                    <img src="/imgs/carrinho.jpg" alt="Carrinho" class="cart-icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="nav">
+            <nav>
+                 <ul>
+                    <li><a href="/index.html">PRONTA ENTREGA</a></li>
+                    <li><a href="/html/brasileirao.html">BRASILEIRÃO</a></li>
+                    <li><a href="/html/internacional.html">INTERNACIONAIS</a></li>
+                    <li><a href="/html/selecoes.html">SELEÇÕES</a></li>
+                    <li><a href="/html/retro.html">RETRÔ</a></li>
+                    <li><a href="/html/infantil.html">INFANTIL</a></li>
+                    <li><a href="/html/femino.html">FEMININO</a></li>
+                    <li><a href="/html/nba.html">NBA</a></li>
+                </ul>
+             </nav>
+     </div>
+    </header>
+    
+    <div class="container">
+        <div class="cart-items">
+            <h2>Itens no Carrinho</h2>
+            <!-- Itens do carrinho serão carregados aqui -->
+        </div>
+        
+        <div class="cart-summary">
+            <h3>Total: R$ <span id="total-price">0.00</span></h3>
+        </div>
+        
+        <div class="checkout-form">
+            <h2>Informações de Pagamento</h2>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Seu e-mail" required>
+
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" placeholder="Seu nome completo" required>
+
+            <label for="payment-method">Forma de Pagamento:</label>
+            <select id="payment-method">
+                <option value="credit-card">Cartão de Crédito</option>
+                <option value="boleto">Boleto</option>
+                <option value="pix">Pix</option>
+            </select>
+
+            <button class="confirm-purchase" onclick="confirmPurchase()">Finalizar Compra</button>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="/imgs/logo.png" alt="Logo da Loja" class="footer-logo-img">
+        </div>
+        <div class="footer-links">
+            <h4>Links Rápidos</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="/html/sobre.html">Sobre Nós</a></li>
+                <li><a href="https://www.instagram.com/willevensports2/" target="_blank">Contato</a></li>
+                <li><a href="/docs/Politica de privacidade.pdf" target="_blank">Política de Privacidade</a></li>
+                <li><a href="/docs/Termos de Serviço do Site Willeven.pdf" target="_blank">Termos de Serviço</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Siga-nos</h4>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><img src="/imgs/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/willevensports2/" target="_blank" class="social-icon"><img src="/imgs/instagram.png" alt="Instagram"></a>
+                <a href="#" class="social-icon"><img src="/imgs/youtube.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Loja de Camisas de Futebol. Todos os direitos reservados.</p>
+    </div>
+</footer>
+      <!-- Modal de confirmação -->
+      <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <p>Obrigado pela compra! Volte sempre.</p>
+        </div>
+    </div>
+
+    <script>
+        function loadCart() {
+            let cartItemsContainer = document.querySelector('.cart-items');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = 0;
+
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(item => {
+                let itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <p><strong>Produto:</strong> ${item.name}</p>
+                    <p><strong>Preço:</strong> R$ ${item.price.toFixed(2)}</p>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+                total += item.price;
+            });
+            document.getElementById('total-price').textContent = total.toFixed(2);
+        }
+
+        function confirmPurchase() {
+            document.getElementById('confirmation-modal').style.display = 'flex';
+            localStorage.removeItem('cart');
+            loadCart();
+        }
+
+        function closeModal() {
+            document.getElementById('confirmation-modal').style.display = 'none';
+        }
+
+        window.onload = loadCart;
+    </script>
+
+    
+<script href="/js/cart.js"></script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>
