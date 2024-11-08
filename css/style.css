@@ -1,0 +1,477 @@
+/* Estilo geral do corpo */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Work Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #ffffff;
+    color: #000000;
+    width: 100%;
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    margin: 20px;
+    width: 200px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    width: 290px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+}
+
+.search-link, .cart-link {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.search-icon, .cart-icon {
+    width: 30px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+/* Estilo da navegação */
+.nav {
+    background-color: #f8f8f8;
+}
+
+.FreteGratis {
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    color: #000000;
+    background-color: #0DEB68;
+    align-items: center;
+    font-size: 15px;
+}
+
+.FreteGratis h5{
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 20;
+    display: flex;
+    justify-content: baseline;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Estilo do carrossel */
+.carousel {
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo da seção de informações */
+.information {
+    display: flex; /* Configura o layout como flexível */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    width: 60%; /* Largura total disponível */
+    margin: 120px auto 40px auto; /* Margem superior e inferior de 30px e centralizado */
+}
+
+.carousel-item1 {
+    flex: 1; /* Faz com que os itens se ajustem igualmente ao espaço disponível */
+    margin-right: 120px; /* Margem à direita dos itens */
+}
+
+/* Remove a margem direita do último item para evitar espaço extra */
+.carousel-item1:last-child {
+    margin-right: 0;
+}
+
+.carousel-item1 img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Opcional: adicionar bordas arredondadas às imagens */
+}
+
+
+/* Estilo da seção de produtos */
+.Ajustar2 {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Alinha a <div> horizontalmente no centro do pai */
+    align-items: center; /* Alinha a <div> verticalmente no centro do pai */
+}
+
+.produtos {
+    display: flex;
+    width: 1300px;
+    height: 444px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.produto {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    width: calc(15% - 40px); /* Diminuído o tamanho da caixa do produto */
+    text-align: left; /* Alinhamento do texto à esquerda */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinhamento do conteúdo à esquerda */
+}
+
+.produto img {
+    max-width: 110%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.produto h5 {
+    margin: 4; /* Removido o espaçamento acima e abaixo do título */
+    padding-bottom: 5px; /* Adicionado espaço abaixo do título */
+}
+
+.produto p{
+    margin: 0; /* Removido o espaçamento acima e abaixo da seção de preço e parcelamento */
+    padding-bottom: 5px; /* Adicionado espaço abaixo da seção de preço e parcelamento */
+}
+
+.juros {
+    margin: 0; /* Removido o espaçamento acima e abaixo da seção de preço e parcelamento */
+    padding-bottom: 5px; /* Adicionado espaço abaixo da seção de preço e parcelamento */
+    font-size: 13px;
+    color: #4CAF50;
+}
+
+.produto p {
+    font-size: 1em; /* Reduzido o tamanho da fonte */
+    color: #333;
+}
+
+.produto .preco {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.Ajustar {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Alinha a <div> horizontalmente no centro do pai */
+    align-items: center; /* Alinha a <div> verticalmente no centro do pai */
+}
+
+.Ajustar1 {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Alinha a <div> horizontalmente no centro do pai */
+    align-items: center; /* Alinha a <div> verticalmente no centro do pai */
+}
+
+.ProntaEntrega{
+    width: 1200px;
+    padding: 15px;
+    font-size: 20px;
+    margin: 100px 0px 0px 0px;
+    text-align: left; /* Alinhamento do texto à esquerda */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinhamento do conteúdo à esquerda */
+}
+
+.imagensSites {
+    justify-content: center; /* Alinha a <div> horizontalmente no centro do pai */
+    cursor: pointer;
+    align-items: center;
+    width: 1300px;
+    overflow: hidden; /* Garante que o zoom não ultrapasse os limites da <div> */
+    position: relative; /* Necessário para o efeito de zoom */
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.imagensSites img {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    transition: transform 0.3s ease; /* Suaviza a transição do zoom */
+    border-radius: 5px;
+}
+
+.imagensSites img:hover, .imagensClubes img:hover {
+    transform: scale(1.1); 
+}
+
+/* Estilo do botão */
+button {
+    width: 160px;
+    background-color: #fff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    align-items: center;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Adicionada animação */
+    
+}
+
+button:hover {
+    align-items: center;
+    background-color: #0DEB68; /* Cor verde quando passar o mouse */
+    color: #fff;
+    border-color: #0DEB68;
+}
+
+/* Estilo do rodapé */
+.footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-logo {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    width: 150px;
+    height: auto;
+}
+
+.footer-links {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-social h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon img {
+    width: 90px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.main-image {
+    width: 100%;
+}
+
+.thumbnail-gallery img {
+    width: 70px;
+    cursor: pointer;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.buy-button {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.imagensClubes {
+    max-width: 80%; /* Define a largura máxima para centralizar com o conteúdo principal */
+    margin: 0 auto; /* Centraliza o carrossel na página */
+    margin-bottom: 200px;
+}
+
+.imagensClubes .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagensClubes img {
+    width: 260px; /* Define a largura das imagens */
+    height: auto;
+    border-radius: 5px;
+    padding: 5px;
+    transition: transform 0.5s ease; /* Suaviza a transição do zoom */
+}
+
+
+/* Telas menores que 1024px */
+@media (max-width: 1024px) {
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-container input {
+        max-width: 200px;
+    }
+}
+
+/* Telas menores que 768px */
+@media (max-width: 768px) {
+    /* Ajustes gerais */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Menu de navegação */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .search-container input {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Produtos em uma coluna */
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Texto centralizado para o banner */
+    .FreteGratis {
+        text-align: center;
+    }
+}
+
+/* Telas menores que 480px */
+@media (max-width: 480px) {
+    /* Logo menor */
+    .logo img {
+        max-width: 150px;
+    }
+
+    /* Campo de pesquisa */
+    .search-container input {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer-social .social-icon img {
+        width: 25px;
+    }
+}
